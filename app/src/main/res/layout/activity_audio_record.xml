@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.ideacode.android_audio.MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextAppearance="@style/TextAppearance.MyApp.Toolbar.Title"
+            app:navigationIconTint="?attr/colorOnPrimary"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:titleCentered="true"
+            app:title="AudioRecord例子"
+            app:titleTextColor="@color/white"
+            android:elevation="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/audio_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="按住录音"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+            android:id="@+id/play_wav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击播放wav音频"
+            app:layout_constraintTop_toBottomOf="@id/audio_record"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+            android:id="@+id/play_pcm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击播放pcm音频"
+            app:layout_constraintTop_toBottomOf="@id/play_wav"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

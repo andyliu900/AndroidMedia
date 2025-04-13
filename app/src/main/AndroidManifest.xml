@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-            android:name="android.hardware.camera"
-            android:required="false" />
+    <uses-feature android:name="android.hardware.camera.any" /> <!-- 需要设备有相机 -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <!-- Android 13+ 专用权限 -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
@@ -12,10 +12,10 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
 
     <!-- 兼容旧版本（Android 12 及以下） -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-            android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
             android:allowBackup="true"
@@ -37,6 +37,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.ideacode.android_audio.ui.AudioRecordActivity"/>
+        <activity android:name="com.ideacode.android_audio.ui.CameraXActivity"/>
     </application>
 
 </manifest>

@@ -14,12 +14,14 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.CameraX
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.ideacode.android_audio_record.R
 import com.ideacode.android_audio.ui.AudioRecordActivity
+import com.ideacode.android_audio.ui.CameraXActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -63,12 +65,20 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.audio_record).setOnClickListener() {
             startTargetActivity("AudioRecoed")
         }
+
+        findViewById<Button>(R.id.camerax).setOnClickListener {
+            startTargetActivity("CameraX")
+        }
     }
 
     private fun startTargetActivity(targetName: String) {
         when (targetName) {
             "AudioRecoed" ->
                 Intent(this, AudioRecordActivity::class.java).also {
+                    startActivity(it)
+                }
+            "CameraX" ->
+                Intent(this, CameraXActivity::class.java).also {
                     startActivity(it)
                 }
         }

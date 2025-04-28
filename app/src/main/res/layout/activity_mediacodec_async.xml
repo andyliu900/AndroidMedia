@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:titleTextAppearance="@style/TextAppearance.MyApp.Toolbar.Title"
+            app:navigationIconTint="?attr/colorOnPrimary"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:titleCentered="true"
+            app:title="MediaCodecAsync例子"
+            app:titleTextColor="@color/white"
+            android:elevation="6dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/btn_show_codec_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CodecList"
+            />
+
+    <Button
+            android:id="@+id/btn_decode_async"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decode Async"
+            />
+
+    <Button
+            android:id="@+id/btn_decode_sync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decode Sync"
+            />
+
+    <SurfaceView
+            android:id="@+id/surface_media_codec"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            />
+
+</LinearLayout>

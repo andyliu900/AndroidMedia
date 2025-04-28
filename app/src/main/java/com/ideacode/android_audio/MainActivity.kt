@@ -22,6 +22,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.ideacode.android_audio_record.R
 import com.ideacode.android_audio.ui.AudioRecordActivity
 import com.ideacode.android_audio.ui.CameraXActivity
+import com.ideacode.android_audio.ui.ExtractorMuxerActivity
+import com.ideacode.android_audio.ui.MediaCodecActivity
+import com.ideacode.android_audio.ui.MediaCodecAsyncActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -69,6 +72,18 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.camerax).setOnClickListener {
             startTargetActivity("CameraX")
         }
+
+        findViewById<Button>(R.id.extractor_usage).setOnClickListener {
+            startTargetActivity("Extractor")
+        }
+
+        findViewById<Button>(R.id.mediacodec_usage).setOnClickListener {
+            startTargetActivity("MediaCodec")
+        }
+
+        findViewById<Button>(R.id.mediacodec_usage_async).setOnClickListener {
+            startTargetActivity("MediaCodecAsync")
+        }
     }
 
     private fun startTargetActivity(targetName: String) {
@@ -79,6 +94,18 @@ class MainActivity : AppCompatActivity() {
                 }
             "CameraX" ->
                 Intent(this, CameraXActivity::class.java).also {
+                    startActivity(it)
+                }
+            "Extractor" ->
+                Intent(this, ExtractorMuxerActivity::class.java).also {
+                    startActivity(it)
+                }
+            "MediaCodec" ->
+                Intent(this, MediaCodecActivity::class.java).also {
+                    startActivity(it)
+                }
+            "MediaCodecAsync" ->
+                Intent(this, MediaCodecAsyncActivity::class.java).also {
                     startActivity(it)
                 }
         }

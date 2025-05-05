@@ -41,6 +41,7 @@
         <activity android:name="com.ideacode.android_audio.ui.ExtractorMuxerActivity"/>
         <activity android:name="com.ideacode.android_audio.ui.MediaCodecActivity"/>
         <activity android:name="com.ideacode.android_audio.ui.MediaCodecAsyncActivity"/>
+        <activity android:name="com.ideacode.android_audio.ui.JniUsageTestActivity"/>
     </application>
 
 </manifest>

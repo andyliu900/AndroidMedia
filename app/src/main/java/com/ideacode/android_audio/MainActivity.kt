@@ -23,6 +23,7 @@ import com.ideacode.android_audio_record.R
 import com.ideacode.android_audio.ui.AudioRecordActivity
 import com.ideacode.android_audio.ui.CameraXActivity
 import com.ideacode.android_audio.ui.ExtractorMuxerActivity
+import com.ideacode.android_audio.ui.JniUsageTestActivity
 import com.ideacode.android_audio.ui.MediaCodecActivity
 import com.ideacode.android_audio.ui.MediaCodecAsyncActivity
 
@@ -84,6 +85,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.mediacodec_usage_async).setOnClickListener {
             startTargetActivity("MediaCodecAsync")
         }
+
+        findViewById<Button>(R.id.jni_usage_test).setOnClickListener {
+            startTargetActivity("JNI_USAGE_TEST")
+        }
     }
 
     private fun startTargetActivity(targetName: String) {
@@ -106,6 +111,10 @@ class MainActivity : AppCompatActivity() {
                 }
             "MediaCodecAsync" ->
                 Intent(this, MediaCodecAsyncActivity::class.java).also {
+                    startActivity(it)
+                }
+            "JNI_USAGE_TEST" ->
+                Intent(this, JniUsageTestActivity::class.java).also {
                     startActivity(it)
                 }
         }

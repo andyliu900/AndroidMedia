@@ -23,6 +23,7 @@ import com.ideacode.android_audio_record.R
 import com.ideacode.android_audio.ui.AudioRecordActivity
 import com.ideacode.android_audio.ui.CameraXActivity
 import com.ideacode.android_audio.ui.ExtractorMuxerActivity
+import com.ideacode.android_audio.ui.FFmpegKitActivity
 import com.ideacode.android_audio.ui.JniUsageTestActivity
 import com.ideacode.android_audio.ui.MediaCodecActivity
 import com.ideacode.android_audio.ui.MediaCodecAsyncActivity
@@ -89,6 +90,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.jni_usage_test).setOnClickListener {
             startTargetActivity("JNI_USAGE_TEST")
         }
+
+        findViewById<Button>(R.id.ffmpegkit_test).setOnClickListener {
+            startTargetActivity("FFmpegKitTest")
+        }
     }
 
     private fun startTargetActivity(targetName: String) {
@@ -115,6 +120,10 @@ class MainActivity : AppCompatActivity() {
                 }
             "JNI_USAGE_TEST" ->
                 Intent(this, JniUsageTestActivity::class.java).also {
+                    startActivity(it)
+                }
+            "FFmpegKitTest" ->
+                Intent(this, FFmpegKitActivity::class.java).also {
                     startActivity(it)
                 }
         }

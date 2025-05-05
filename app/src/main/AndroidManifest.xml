@@ -42,6 +42,8 @@
         <activity android:name="com.ideacode.android_audio.ui.MediaCodecActivity"/>
         <activity android:name="com.ideacode.android_audio.ui.MediaCodecAsyncActivity"/>
         <activity android:name="com.ideacode.android_audio.ui.JniUsageTestActivity"/>
+        <activity android:name="com.ideacode.android_audio.ui.FFmpegKitActivity"/>
+
     </application>
 
 </manifest>
